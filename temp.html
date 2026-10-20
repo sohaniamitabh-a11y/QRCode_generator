@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> qr code genertor</title>
+        <style>
+            body {font-family: Arial, sans-serif; margin: 2rem;}
+            .container {max-width: 480px; margin: auto;}
+            .error {color:blueviolet;}
+            .qr {margin-top: 1rem; text-align:center;}
+            img {border: 1px solid #ccc;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>QRcode Genrator</h1>
+
+            <form method="post">
+                <label for="url">WEBSITE URL:</label><br>
+                <input type="text"
+                        id="url"
+                        name="url"
+                        placeholder="https://example.com"
+                        style="width:100%"
+                        required>
+                <button type="submit" style="margin-top:0.5rem;">Generate qr code</button>
+            </form>
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            
+            {% if img_data %}
+            <div class="qr">
+                <p>qr code for <strong>{{ url }}</strong>:</p>
+                <img src="data:image/png;base64,{{ img_data }}" alt="qr code">
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
