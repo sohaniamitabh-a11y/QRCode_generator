@@ -189,29 +189,17 @@
             width: 100%;
         }
 
-        /* CAMOUFLAGE SIGNATURE */
-        .camo-sig {
+        /* SIGNATURE: BOTTOM RIGHT */
+        .creator-sig {
             position: fixed;
             bottom: 15px;
             right: 20px;
             font-family: 'Press Start 2P', cursive;
-            font-size: 0.5rem;
+            font-size: 0.65rem;
             letter-spacing: 2px;
             color: var(--primary-red);
-            opacity: 0.03;
-            filter: blur(0.5px);
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            user-select: none;
-            transition: all 0.5s ease;
+            text-shadow: 0 0 10px rgba(255, 26, 26, 0.8), 2px 2px 0 var(--dark-red);
             z-index: 1000;
-        }
-        
-        .camo-sig:hover {
-            opacity: 0.8;
-            filter: blur(0);
-            mix-blend-mode: normal;
-            text-shadow: 0 0 10px var(--primary-red);
         }
 
         @keyframes glitch {
@@ -268,8 +256,8 @@
         {% endif %}
     </div>
 
-    <!-- Camouflage Signature: Bottom Right -->
-    <div class="camo-sig">AMITABH SOHANI</div>
+    <!-- Signature: Bottom Right -->
+    <div class="creator-sig">AMITABH SOHANI</div>
 
 </body>
 </html>
